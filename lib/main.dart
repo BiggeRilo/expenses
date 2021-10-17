@@ -43,6 +43,7 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -93,9 +94,9 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           IconButton(
               onPressed: () => _opentranscacionFormModal(context),
-              icon: Icon(Icons.add)),
+              icon: const Icon(Icons.add)),
         ],
-        title: Text('Despesas Pessoais'),
+        title: const Text('Despesas Pessoais'),
         
       ),
       body: SingleChildScrollView(
@@ -108,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => _opentranscacionFormModal(context),
       ),
       floatingActionButtonLocation:

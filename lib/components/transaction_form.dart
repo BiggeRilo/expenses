@@ -54,23 +54,23 @@ class _TransactionFormState extends State<TransactionForm> {
             TextField(
               controller: _titleControler,
               onSubmitted: (_) => _submitForm(),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Título',
               ),
             ),
             TextField(
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
                 controller: _valueControler,
                 onSubmitted: (_) => _submitForm(),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Valor (R\$)',
                 )),
             Row(
               children: <Widget>[
-                Expanded(child: Text( _selectedDate == null ? 'Nenhuma data selecionada!': 'Data Selecionada: ${ DateFormat('dd/MM/y').format(_selectedDate)}')),
+                Expanded(child: Text('Data Selecionada: ${ DateFormat('dd/MM/y').format(_selectedDate)}')),
                 TextButton(
                   onPressed: _showDatePicker,
-                  child: Text(
+                  child: const Text(
                     'Selecionar Data',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -81,7 +81,7 @@ class _TransactionFormState extends State<TransactionForm> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 ElevatedButton(
-                  child: Text(
+                  child: const Text(
                     'Nova Transacao',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
