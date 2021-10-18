@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
- 
   final List<Transaction> transactions;
   final void Function(String) onRemove;
 
@@ -58,7 +57,11 @@ class TransactionList extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline6,
                     ),
                     subtitle: Text(DateFormat('d MMM y').format(tr.date)),
-                    trailing: IconButton(onPressed: () => onRemove(tr.id), icon: const Icon(Icons.delete_rounded), color: Theme.of(context).errorColor,),
+                    trailing: IconButton(
+                      onPressed: () => onRemove(tr.id),
+                      icon: const Icon(Icons.delete_rounded),
+                      color: Theme.of(context).errorColor,
+                    ),
                   ),
                 );
               },

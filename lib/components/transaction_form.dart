@@ -11,7 +11,6 @@ class TransactionForm extends StatefulWidget {
 }
 
 class _TransactionFormState extends State<TransactionForm> {
- 
   final _titleControler = TextEditingController();
   final _valueControler = TextEditingController();
   DateTime _selectedDate = DateTime.now();
@@ -34,7 +33,7 @@ class _TransactionFormState extends State<TransactionForm> {
       firstDate: DateTime(2019),
       lastDate: DateTime.now(),
     ).then((pickedDate) {
-      if(pickedDate == null){
+      if (pickedDate == null) {
         return;
       }
       setState(() {
@@ -59,7 +58,8 @@ class _TransactionFormState extends State<TransactionForm> {
               ),
             ),
             TextField(
-                keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 controller: _valueControler,
                 onSubmitted: (_) => _submitForm(),
                 decoration: const InputDecoration(
@@ -67,7 +67,9 @@ class _TransactionFormState extends State<TransactionForm> {
                 )),
             Row(
               children: <Widget>[
-                Expanded(child: Text('Data Selecionada: ${ DateFormat('dd/MM/y').format(_selectedDate)}')),
+                Expanded(
+                    child: Text(
+                        'Data Selecionada: ${DateFormat('dd/MM/y').format(_selectedDate)}')),
                 TextButton(
                   onPressed: _showDatePicker,
                   child: const Text(

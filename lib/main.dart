@@ -43,7 +43,6 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -97,7 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: const Icon(Icons.add)),
         ],
         title: const Text('Despesas Pessoais'),
-        
       ),
       body: SingleChildScrollView(
         child: Column(
