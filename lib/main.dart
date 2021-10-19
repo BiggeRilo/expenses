@@ -8,9 +8,11 @@ import 'components/transaction_list.dart';
 import 'components/chart.dart';
 import 'models/transaction.dart';
 
-main() => runApp(ExpensesApp());
+main() => runApp(const ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
+  const ExpensesApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,6 +40,7 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -97,11 +100,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+
     bool isLandscape = mediaQuery.orientation == Orientation.landscape;
+
+    final iconList = Platform.isIOS ? CupertinoIcons.list_bullet : Icons.list;
+    final iconChart =
+        Platform.isIOS ? CupertinoIcons.chart_bar : Icons.show_chart;
 
     final actions = <Widget>[
       if (isLandscape)
-        _getIconButton(_showChart ? Icons.list : Icons.show_chart, () {
+        _getIconButton(_showChart ? iconList : iconChart, () {
           setState(() {
             _showChart = !_showChart;
           });
@@ -112,6 +120,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     ];
 
+    
+
     final appBar = AppBar(
       title: const Text('Despesas Pessoais'),
       actions: actions,
@@ -121,7 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         mediaQuery.padding.top;
 
-    final bodyPage = SingleChildScrollView(
+    final bodyPage = SafeArea(
+        child: SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -137,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
         ],
       ),
-    );
+    ));
 
     return Platform.isIOS
         ? CupertinoPageScaffold(
