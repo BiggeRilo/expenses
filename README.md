@@ -4,7 +4,7 @@ The purpose of this app is to create a simple way to keep track of weekly expens
 
 # UI 
 
-<img src="https://github.com/BiggeRilo/expenses-app/blob/fc2822e8c252ec849c090b23fc08396e5472d728/images/Screenshot_1634490358.png" width="350"/> <img src="https://github.com/BiggeRilo/expenses-app/blob/fc2822e8c252ec849c090b23fc08396e5472d728/images/Screenshot_1634490360.png" alt="drawing" width="350"/> 
+<img src="https://github.com/BiggeRilo/expenses/blob/217e0138f172b18c5e1372baf2ffe827df845d3d/images/Screenshot_1634490358.png" width="350"/> <img src="https://github.com/BiggeRilo/expenses/blob/217e0138f172b18c5e1372baf2ffe827df845d3d/images/Screenshot_1634490360.png" alt="drawing" width="350"/> 
 
 
 ## Getting Started
